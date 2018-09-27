@@ -15,10 +15,10 @@ export class AppComponent {
 
   ngOnInit () {
     console.log('ng on init')
-    this.service.fetch('http://demo1230338.mockable.io/eac')
-      .subscribe((response: any) => {
-        console.log('test servic e response : ', response)
-        this.message = response.msg
-      })
+    // this.service.fetch('http://demo1230338.mockable.io/eac')
+    //   .subscribe((response: any) => {
+    //     console.log('test servic e response : ', response)
+    //     this.message = response.msg
+    //   })
   }
 }
