@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit,  EventEmitter, Input, Output } from '@angular/core';
 import { AppModel } from '../../Models/apps-model'
 import { LocalStorage } from '../../Utils/localstorage';
+import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-card',
@@ -10,8 +11,10 @@ import { LocalStorage } from '../../Utils/localstorage';
 
 export class CardComponent implements OnInit {
   @Input() app: AppModel;
+  @Input() isFavPage: boolean;
+  @Output() onUpdate = new EventEmitter<boolean>();
   favApps: Array<Object> = [];
-  constructor(private ls: LocalStorage) { }
+  constructor(private ls: LocalStorage, public snackBar: MatSnackBar) { }
 
   ngOnInit() {
   }
@@ -19,11 +22,28 @@ export class CardComponent implements OnInit {
   addToFav(app) {
     this.favApps = this.ls.read('apps') || []
     const isAdded: any = this.favApps.find((favApp: any) => favApp.name === app.name)
-    console.log('item = ', isAdded)
     if (!isAdded) {
       this.favApps.push(app)
+      localStorage.setItem( 'apps', JSON.stringify(this.favApps));
+      this.openSnackBar('Added to my favourite', 'OK')
+    } else {
+      this.openSnackBar('App is already added', 'CLOSE')
     }
+    this.onUpdate.emit()
+  }
+
+  removeFromFav(app) {
+    this.favApps = this.ls.read('apps')
+    this.favApps = this.favApps.filter((favApp: any) => favApp.name !== app.name)
     localStorage.setItem( 'apps', JSON.stringify(this.favApps));
+    this.openSnackBar('App removed from my favourite', 'CLOSE')
+    this.onUpdate.emit()
+  }
+
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 3000,
+    });
   }
 
 }

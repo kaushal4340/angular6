@@ -1,6 +1,7 @@
 <mat-card>
-  <img src="../../../assets/chrome.png" />
+  <img src="{{app.logo}}" />
   <mat-card-title>{{app.name}}</mat-card-title>
   <mat-card-subtitle>Helps in onboard!</mat-card-subtitle>
-  <button (click)="addToFav(app)" mat-raised-button>ADD</button>
+  <button *ngIf="!isFavPage" (click)="addToFav(app)" mat-raised-button>ADD</button>
+  <button *ngIf="isFavPage" (click)="removeFromFav(app)" mat-raised-button>Remove</button>
 </mat-card>

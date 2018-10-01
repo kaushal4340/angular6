@@ -1,14 +1,18 @@
 <div class="layout-container">
-  <mat-tab-group>
+  <mat-tab-group (selectedTabChange)="onTabChange($event)">
     <mat-tab label="APPS">
       <mat-grid-list cols="6" rowHeight="250px" [style.background]="''">
         <mat-grid-tile *ngFor="let app of apps">
-          <app-card [app]="app"></app-card>
+          <app-card (onUpdate)="onUpdate($event)" [app]="app"></app-card>
         </mat-grid-tile>
       </mat-grid-list>
     </mat-tab>
-    <mat-tab label="FAV APPS">
-      PAGE UNDER CONSTRUCTION
+    <mat-tab label="FAV APPS ({{favApps.length}})">
+      <mat-grid-list cols="6" rowHeight="250px" [style.background]="''">
+        <mat-grid-tile *ngFor="let app of favApps">
+          <app-card (onUpdate)="onUpdate($event)" [isFavPage]="isFavPage" [app]="app"></app-card>
+        </mat-grid-tile>
+      </mat-grid-list>
     </mat-tab>
   </mat-tab-group>
 </div>

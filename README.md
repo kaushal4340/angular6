@@ -30,3 +30,33 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## CLI
 `npm install @angular/cli@latest`
 `ng new PROJECT_NAME --style=(scss | less)`
+
+`
+{
+    "apps":[{
+        "name": "chrome",
+        "url": "https://www.google.com/chrome/",
+        "logo": "../../../assets/chrome.png"
+    },
+    {
+        "name": "Notepad",
+        "url": "https://www.google.com/",
+        "logo": ""
+    },
+    {
+        "name": "Youtube",
+        "url": "http://google.de/search?q=youtube",
+        "logo": ""
+    },
+    {
+        "name": "Skype",
+        "url": "http://google.de/search?q=skype",
+        "logo": ""
+    },
+    {
+        "name": "Netflix",
+        "url": "http://netflix.com",
+        "logo": ""
+    }]
+}
+`
