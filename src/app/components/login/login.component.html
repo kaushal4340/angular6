@@ -3,21 +3,25 @@
       <mat-card-title><h2>Login to Angular 6 App</h2></mat-card-title>
     </mat-card-header>
     <form  action="" name="test-form">
+        <div *ngIf="invalidError" class="error">Please enter valid username or password.</div>
         <mat-grid-list cols="1" rowHeight="70px">
           <mat-grid-tile>
             <mat-form-field>
-              <input matInput placeholder="Enter username" >
+              <input name="username" [(ngModel)]="username" matInput placeholder="Enter username" >
+              <mat-error *ngIf="invalidError">
+                  Please enter a valid username
+              </mat-error>
             </mat-form-field>
           </mat-grid-tile>
       
           <mat-grid-tile>
             <mat-form-field>
-              <input type="password" matInput placeholder="Enter password" >
+              <input name="password" [(ngModel)]="password" type="password" matInput placeholder="Enter password" >
             </mat-form-field>
           </mat-grid-tile>
       
           <mat-grid-tile>
-            <button mat-raised-button>LOGIN</button>
+            <button (click)="login()" mat-raised-button>LOGIN</button>
           </mat-grid-tile>
         </mat-grid-list>
       </form>

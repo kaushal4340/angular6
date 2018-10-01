@@ -4,7 +4,8 @@ import { MatButtonModule,
   MatGridListModule,
   MatFormFieldModule,
   MatInputModule,
-  MatCardModule } from '@angular/material'
+  MatCardModule } from '@angular/material';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 
@@ -17,7 +18,8 @@ import { MatButtonModule,
     MatGridListModule,
     MatFormFieldModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    MatTabsModule
   ],
   declarations: []
 })

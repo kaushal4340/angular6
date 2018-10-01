@@ -1,0 +1,15 @@
+<div class="layout-container">
+  <mat-tab-group>
+    <mat-tab label="APPS">
+      <mat-grid-list cols="6" rowHeight="250px" [style.background]="''">
+        <mat-grid-tile *ngFor="let app of apps">
+          <app-card [app]="app"></app-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </mat-tab>
+    <mat-tab label="FAV APPS">
+      PAGE UNDER CONSTRUCTION
+    </mat-tab>
+  </mat-tab-group>
+</div>
+

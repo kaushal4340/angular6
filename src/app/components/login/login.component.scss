@@ -1,4 +1,14 @@
 .test-card {
   max-width: 400px;
   margin: 0 auto;
+
+  .error {
+    text-align: center;
+    font-size: 14px;
+    color: #ff5555;
+    padding: 10px;
+    border: 1px solid #ff5555;
+    border-radius: 3px;
+    background: #ffe6e6;
+  }
 }
