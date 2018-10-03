@@ -1,7 +1,10 @@
 <mat-card>
   <img src="{{app.logo}}" />
-  <mat-card-title>{{app.name}}</mat-card-title>
-  <mat-card-subtitle>Helps in onboard!</mat-card-subtitle>
+  <mat-card-title>
+    <span *ngIf="!isFavPage">{{app.name}}</span>
+    <a *ngIf="isFavPage" target="_blank" href="{{app.url}}">{{app.name}}</a>
+  </mat-card-title>
+  <mat-card-subtitle><span class="truncate">{{app.description}}</span></mat-card-subtitle>
   <button *ngIf="!isFavPage" (click)="addToFav(app)" mat-raised-button>ADD</button>
   <button *ngIf="isFavPage" (click)="removeFromFav(app)" mat-raised-button>Remove</button>
 </mat-card>

@@ -1,12 +1,21 @@
+
 <div class="layout-container">
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input [(ngModel)]="searchText" name="search" matInput placeholder="Search App">
+      <mat-icon matSuffix>mode_search</mat-icon>
+    </mat-form-field>
+  </form>
+
   <mat-tab-group (selectedTabChange)="onTabChange($event)">
     <mat-tab label="APPS">
       <mat-grid-list cols="6" rowHeight="250px" [style.background]="''">
-        <mat-grid-tile *ngFor="let app of apps">
+        <mat-grid-tile *ngFor="let app of apps | filter : searchText">
           <app-card (onUpdate)="onUpdate($event)" [app]="app"></app-card>
         </mat-grid-tile>
       </mat-grid-list>
     </mat-tab>
+
     <mat-tab label="FAV APPS ({{favApps.length}})">
       <mat-grid-list cols="6" rowHeight="250px" [style.background]="''">
         <mat-grid-tile *ngFor="let app of favApps">

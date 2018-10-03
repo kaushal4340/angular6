@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FilterPipe } from './components/layout/filter.pipe';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,7 +20,8 @@ import { CardComponent } from './components/card/card.component';
     ButtonComponent,
     LoginComponent,
     LayoutComponent,
-    CardComponent
+    CardComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

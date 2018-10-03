@@ -5,7 +5,8 @@ import { MatButtonModule,
   MatFormFieldModule,
   MatInputModule,
   MatCardModule,
-  MatSnackBarModule } from '@angular/material';
+  MatSnackBarModule,
+  MatIconModule } from '@angular/material';
 import {MatTabsModule} from '@angular/material/tabs';
 
 
@@ -21,7 +22,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatInputModule,
     MatCardModule,
     MatTabsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatIconModule
   ],
   declarations: []
 })

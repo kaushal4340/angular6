@@ -13,10 +13,11 @@ export class LayoutComponent implements OnInit {
   private apps: AppModel;
   isFavPage: boolean;
   favApps: Array<Object> = [];
-  constructor(private service: AppsService, private ls: LocalStorage) { }
+  searchText: string;
+  constructor(private appService: AppsService, private ls: LocalStorage) { }
 
   ngOnInit() {
-    this.service.fetch()
+    this.appService.fetch()
       .subscribe((response: any) => {
         console.log('apps response : ', response)
         this.apps = response.apps
@@ -32,7 +33,13 @@ export class LayoutComponent implements OnInit {
     this.favApps = this.ls.read('apps')
   }
 
-  onUpdate(event: MatTabChangeEvent) {
+  searchApp(event) {
+    let filterApp: any = this.apps
+    filterApp = filterApp.filter((app: any) => app.name.indexOf(this.searchText) > -1)
+    console.log('filterapp : ', this.searchText, filterApp)
+  }
+
+  onUpdate() {
     this.favApps = this.ls.read('apps')
   }
 

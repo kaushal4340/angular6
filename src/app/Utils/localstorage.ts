@@ -6,9 +6,8 @@ import { AppModel } from '../Models/apps-model';
 })
 
 export class LocalStorage {
-  update (app) {
-    console.log('apps = ', app)
-    return window.localStorage.setItem('apps', JSON.stringify(app))
+  update (key, app) {
+    return window.localStorage.setItem(key, JSON.stringify(app))
   }
 
   read(key) {
