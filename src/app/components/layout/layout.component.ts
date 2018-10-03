@@ -31,6 +31,10 @@ export class LayoutComponent implements OnInit {
     this.favApps = this.ls.read('apps')
   }
 
+  isAddedToFav(app) {
+    return this.favApps.find((favApp: any) => favApp.name === app.name)
+  }
+
   onUpdate() {
     this.favApps = this.ls.read('apps')
   }

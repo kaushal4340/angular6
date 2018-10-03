@@ -12,6 +12,7 @@ import { MatSnackBar } from '@angular/material';
 export class CardComponent implements OnInit {
   @Input() app: AppModel;
   @Input() isFavPage: boolean;
+  @Input() isAdded: boolean;
   @Output() onUpdate = new EventEmitter<boolean>();
   favApps: Array<Object> = [];
   constructor(private localStorage: LocalStorage, private snackBar: MatSnackBar) { }
