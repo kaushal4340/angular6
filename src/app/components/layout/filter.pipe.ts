@@ -3,14 +3,14 @@ import {Pipe, PipeTransform} from '@angular/core';
 @Pipe({name: 'filter'})
 
 export class FilterPipe implements PipeTransform {
-  transform(items : any[], searchText : string) : any[] {
-    if (!items)
-      return [];
+  transform(apps : any[], searchText : string) : any[] {
+    if (!apps)
+      return []
     if (!searchText)
-      return items;
+      return apps
     searchText = searchText.toLowerCase();
-    return items.filter(it => {
-      return it.name.toLowerCase().includes(searchText);
-    });
+    return apps.filter(app => {
+      return app.name.toLowerCase().includes(searchText)
+    })
   }
 }

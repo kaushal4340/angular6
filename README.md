@@ -30,6 +30,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## CLI
 `npm install @angular/cli@latest`
 `ng new PROJECT_NAME --style=(scss | less)`
+`ng generate component NAME | ng g c NAME`
 
 `
 {

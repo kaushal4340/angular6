@@ -17,11 +17,9 @@ export class LayoutComponent implements OnInit {
   constructor(private appService: AppsService, private ls: LocalStorage) { }
 
   ngOnInit() {
-    this.appService.fetch()
-      .subscribe((response: any) => {
-        console.log('apps response : ', response)
-        this.apps = response.apps
-      })
+    this.appService.fetch().subscribe((response: any) => {
+      this.apps = response.apps
+    })
     this.favApps = this.ls.read('apps') || []
   }
 
@@ -31,12 +29,6 @@ export class LayoutComponent implements OnInit {
       this.isFavPage = true
     }
     this.favApps = this.ls.read('apps')
-  }
-
-  searchApp(event) {
-    let filterApp: any = this.apps
-    filterApp = filterApp.filter((app: any) => app.name.indexOf(this.searchText) > -1)
-    console.log('filterapp : ', this.searchText, filterApp)
   }
 
   onUpdate() {

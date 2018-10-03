@@ -8,7 +8,8 @@ import { LayoutComponent } from '../components/layout/layout.component'
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'buttons', component: ButtonComponent },
-  { path: 'homelayout', component: LayoutComponent}
+  { path: 'homelayout', component: LayoutComponent},
+  { path: '', redirectTo: '/login', pathMatch: 'full'}
 ]
 
 @NgModule({

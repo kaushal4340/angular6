@@ -14,9 +14,16 @@ export class CardComponent implements OnInit {
   @Input() isFavPage: boolean;
   @Output() onUpdate = new EventEmitter<boolean>();
   favApps: Array<Object> = [];
-  constructor(private localStorage: LocalStorage, public snackBar: MatSnackBar) { }
+  constructor(private localStorage: LocalStorage, private snackBar: MatSnackBar) { }
+
+  ngOnChanges () {
+    // Invoked every time there is a change in one of th input properties of the component.
+    console.log('ngOnChanges: card ', this.app)
+  }
 
   ngOnInit() {
+    // Invoked when given component has been initialized.
+    console.log('ngonInit: card')
   }
 
   addToFav(app) {
