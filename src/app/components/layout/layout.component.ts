@@ -10,7 +10,7 @@ import { MatTabChangeEvent } from '@angular/material';
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit {
-  private apps: AppModel;
+  apps: AppModel;
   isFavPage: boolean;
   favApps: Array<Object> = [];
   searchText: string;

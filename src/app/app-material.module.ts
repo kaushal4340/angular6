@@ -7,10 +7,9 @@ import { MatButtonModule,
   MatCardModule,
   MatSnackBarModule,
   MatIconModule,
-  MatToolbarModule } from '@angular/material';
-import {MatTabsModule} from '@angular/material/tabs';
-
-
+  MatToolbarModule,
+  MatBadgeModule,
+  MatTabsModule } from '@angular/material';
 
 @NgModule({
   imports: [
@@ -25,7 +24,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatTabsModule,
     MatSnackBarModule,
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatBadgeModule
   ],
   declarations: []
 })

@@ -16,6 +16,7 @@ import { CardComponent } from './components/card/card.component';
 
 // root ng module
 @NgModule({
+  // The components, directives, and pipes that belong to this NgModule.
   declarations: [
     AppComponent,
     ButtonComponent,
@@ -24,6 +25,11 @@ import { CardComponent } from './components/card/card.component';
     CardComponent,
     FilterPipe
   ],
+
+  // The subset of declarations that should be visible and usable in the component templates of other NgModules.
+  exports: [],
+
+  // Other modules whose exported classes are needed by component templates declared in this NgModule.
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -33,7 +39,11 @@ import { CardComponent } from './components/card/card.component';
     FormsModule,
     ReactiveFormsModule
   ],
+
+  // Creators of services that this NgModule contributes to the global collection of services
   providers: [],
+
+  // The main application view, called the root component, which hosts all other app views
   bootstrap: [AppComponent]
 })
 
